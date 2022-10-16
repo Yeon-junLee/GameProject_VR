@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-
-    public float noteSpeed = 400;
-   
+    public double blockdestroytime = 0d;
+    public float noteSpeed = 800;
+    
 
     // Update is called once per frame
     void Update()
     {
         transform.localPosition += Vector3.down * noteSpeed * Time.deltaTime;
+        blockdestroytime += Time.deltaTime;
+        if(blockdestroytime > 10d)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
