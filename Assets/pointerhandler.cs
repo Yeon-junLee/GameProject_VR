@@ -29,13 +29,9 @@ public class pointerhandler : MonoBehaviour
     {
         if (eventArgs.target.CompareTag("UI"))
         {
-            Debug.Log(eventArgs.target.name);
+            Debug.Log(eventArgs.target.name);       // 클릭 버튼 생각해서 함수 또 짜야됨 지금 기기 없이는 확인 못함
         }
 
-        if(eventArgs.target.CompareTag("Stick"))
-        {
-
-        }
     }
     // Update is called once per frame
     void Update()
