@@ -17,38 +17,38 @@ namespace Valve.VR
     public partial class SteamVR_Actions
     {
         
-        private static SteamVR_Action_Boolean p_newSet_NewAction;
+        private static SteamVR_Action_Boolean p_default_NewAction;
         
-        public static SteamVR_Action_Boolean newSet_NewAction
+        public static SteamVR_Action_Boolean default_NewAction
         {
             get
             {
-                return SteamVR_Actions.p_newSet_NewAction.GetCopy<SteamVR_Action_Boolean>();
+                return SteamVR_Actions.p_default_NewAction.GetCopy<SteamVR_Action_Boolean>();
             }
         }
         
         private static void InitializeActionArrays()
         {
             Valve.VR.SteamVR_Input.actions = new Valve.VR.SteamVR_Action[] {
-                    SteamVR_Actions.newSet_NewAction};
+                    SteamVR_Actions.default_NewAction};
             Valve.VR.SteamVR_Input.actionsIn = new Valve.VR.ISteamVR_Action_In[] {
-                    SteamVR_Actions.newSet_NewAction};
+                    SteamVR_Actions.default_NewAction};
             Valve.VR.SteamVR_Input.actionsOut = new Valve.VR.ISteamVR_Action_Out[0];
             Valve.VR.SteamVR_Input.actionsVibration = new Valve.VR.SteamVR_Action_Vibration[0];
             Valve.VR.SteamVR_Input.actionsPose = new Valve.VR.SteamVR_Action_Pose[0];
             Valve.VR.SteamVR_Input.actionsBoolean = new Valve.VR.SteamVR_Action_Boolean[] {
-                    SteamVR_Actions.newSet_NewAction};
+                    SteamVR_Actions.default_NewAction};
             Valve.VR.SteamVR_Input.actionsSingle = new Valve.VR.SteamVR_Action_Single[0];
             Valve.VR.SteamVR_Input.actionsVector2 = new Valve.VR.SteamVR_Action_Vector2[0];
             Valve.VR.SteamVR_Input.actionsVector3 = new Valve.VR.SteamVR_Action_Vector3[0];
             Valve.VR.SteamVR_Input.actionsSkeleton = new Valve.VR.SteamVR_Action_Skeleton[0];
             Valve.VR.SteamVR_Input.actionsNonPoseNonSkeletonIn = new Valve.VR.ISteamVR_Action_In[] {
-                    SteamVR_Actions.newSet_NewAction};
+                    SteamVR_Actions.default_NewAction};
         }
         
         private static void PreInitActions()
         {
-            SteamVR_Actions.p_newSet_NewAction = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/NewSet/in/NewAction")));
+            SteamVR_Actions.p_default_NewAction = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/NewAction")));
         }
     }
 }

@@ -1,16 +1,33 @@
 {
   "actions": [
     {
-      "name": "/actions/NewSet/in/NewAction",
+      "name": "/actions/default/in/NewAction",
       "type": "boolean"
     }
   ],
   "action_sets": [
     {
+      "name": "/actions/default",
+      "usage": "single"
+    },
+    {
       "name": "/actions/NewSet",
+      "usage": "single"
+    },
+    {
+      "name": "/actions/1",
+      "usage": "single"
+    },
+    {
+      "name": "/actions/2",
       "usage": "single"
     }
   ],
-  "default_bindings": [],
+  "default_bindings": [
+    {
+      "controller_type": "oculus_touch",
+      "binding_url": "application_generated_unity_vrgameproject_exe_binding_oculus_touch.json"
+    }
+  ],
   "localization": []
 }
