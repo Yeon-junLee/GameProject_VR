@@ -11,6 +11,7 @@ TagManager:
   - EXIT_BACK
   - OPTION
   - OPTION_BACK
+  - START
   layers:
   - Default
   - TransparentFX

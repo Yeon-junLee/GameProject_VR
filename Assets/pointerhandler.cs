@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.Extras;
-
+using UnityEngine.SceneManagement;
 public class pointerhandler : MonoBehaviour
 {
     public SteamVR_LaserPointer laserPointer;
@@ -32,7 +32,7 @@ public class pointerhandler : MonoBehaviour
     {
         if (eventArgs.target.CompareTag("EXIT"))
         {
-            onclick.ExitMenu_btn_clicked();       // 클릭 버튼 생각해서 함수 또 짜야됨 지금 기기 없이는 확인 못함
+            onclick.ExitMenu_btn_clicked();
         }
 
         if (eventArgs.target.CompareTag("EXIT_BACK"))
@@ -50,6 +50,10 @@ public class pointerhandler : MonoBehaviour
             onclick.OptionMenu_btn_back_clicked();
         }
 
+        if (eventArgs.target.CompareTag("START"))
+        {
+            SceneManager.LoadScene("basic scene");
+        }
     }
     // Update is called once per frame
     void Update()
