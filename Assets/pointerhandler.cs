@@ -54,6 +54,11 @@ public class pointerhandler : MonoBehaviour
         {
             SceneManager.LoadScene("basic scene");
         }
+
+        if (eventArgs.target.CompareTag("RESULT_BACK"))
+        {
+            SceneManager.LoadScene("UI scene");
+        }
     }
     // Update is called once per frame
     void Update()

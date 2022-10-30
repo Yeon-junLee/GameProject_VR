@@ -12,6 +12,7 @@ TagManager:
   - OPTION
   - OPTION_BACK
   - START
+  - RESULT_BACK
   layers:
   - Default
   - TransparentFX
