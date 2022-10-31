@@ -47,6 +47,6 @@ MonoBehaviour:
   name: 
   packageType: 0
   itemPrefab: {fileID: 7267895908185311078, guid: 1d3bcb462a3609a408e6a72bcd55e0f0, type: 3}
-  otherHandItemPrefab: {fileID: 0}
+  otherHandItemPrefab: {fileID: 7267895908185311078, guid: 1d3bcb462a3609a408e6a72bcd55e0f0, type: 3}
   previewPrefab: {fileID: 7110392025898298102, guid: 79e10797445ca6c4ab3039d95166c938, type: 3}
   fadedPreviewPrefab: {fileID: 7390300504545999170, guid: e6310382727d2f5409f0987892d1d70b, type: 3}
