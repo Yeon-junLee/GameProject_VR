@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ComboManager : MonoBehaviour
 {
-    public int combo = 0;
+    public static int combo = 0;
 
     public void ComboPlus()
     {
