@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 public class pointerhandler : MonoBehaviour
 {
     public SteamVR_LaserPointer laserPointer;
-    private onClick_UI onclick = null;
+
+    public GameObject OptionMenu;
+    public GameObject ExitMenu;
+    public GameObject MainMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -14,44 +17,59 @@ public class pointerhandler : MonoBehaviour
         laserPointer.PointerIn += PointerInside;
         laserPointer.PointerOut += PointerOutside;
         laserPointer.PointerClick += PointerClick;
-
-        onClick_UI onclick = GetComponent<onClick_UI>();
     }
 
     public void PointerInside(object sender, PointerEventArgs eventArgs)
     {
-        Debug.Log("UI Inside");
+        if (eventArgs.target.CompareTag("UI"))
+        {
+            Debug.Log("UI Inside");
+        }
+
     }
 
     public void PointerOutside(object sender, PointerEventArgs eventArgs)
     {
-        Debug.Log("UI Outside");
+        if (eventArgs.target.CompareTag("UI"))
+        {
+            Debug.Log("UI Outside");
+        }
     }
 
     public void PointerClick(object sender, PointerEventArgs eventArgs)
     {
+        if (eventArgs.target.CompareTag("UI"))
+        {
+            Debug.Log("UI Clicked");
+        }
+
         if (eventArgs.target.CompareTag("EXIT"))
         {
-            onclick.ExitMenu_btn_clicked();
+            Debug.Log("EXIT Clicked");
+            ExitMenu_btn_clicked();
         }
 
         if (eventArgs.target.CompareTag("EXIT_BACK"))
         {
-            onclick.ExitMenu_btn_back_clicked();
+            Debug.Log("Exit back clicked");
+            ExitMenu_btn_back_clicked();
         }
 
         if (eventArgs.target.CompareTag("OPTION"))
         {
-            onclick.OptionMenu_btn_clicked();
+            Debug.Log("Option Clicked");
+            OptionMenu_btn_clicked();
         }
 
         if (eventArgs.target.CompareTag("OPTION_BACK"))
         {
-            onclick.OptionMenu_btn_back_clicked();
+            Debug.Log("Option back Clicked");
+            OptionMenu_btn_back_clicked();
         }
 
         if (eventArgs.target.CompareTag("START"))
         {
+            Debug.Log("Start Clicked");
             SceneManager.LoadScene("basic scene");
         }
 
@@ -60,9 +78,28 @@ public class pointerhandler : MonoBehaviour
             SceneManager.LoadScene("UI scene");
         }
     }
-    // Update is called once per frame
-    void Update()
+
+    public void ExitMenu_btn_clicked()
     {
-        
+        MainMenu.SetActive(false);
+        ExitMenu.SetActive(true);
+    }
+
+    public void ExitMenu_btn_back_clicked()
+    {
+        ExitMenu.SetActive(false);
+        MainMenu.SetActive(true);
+    }
+
+    public void OptionMenu_btn_clicked()
+    {
+        MainMenu.SetActive(false);
+        OptionMenu.SetActive(true);
+    }
+
+    public void OptionMenu_btn_back_clicked()
+    {
+        OptionMenu.SetActive(false);
+        MainMenu.SetActive(true);
     }
 }
