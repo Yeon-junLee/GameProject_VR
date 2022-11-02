@@ -11,9 +11,15 @@ public class NoteManager3 : MonoBehaviour
     [SerializeField] GameObject goNote = null;
 
     TimingManager3 theTimingManager;
+
+    private ComboManager comboManager = null;
+
     void Start()
     {
         theTimingManager = GetComponent<TimingManager3>();
+
+        GameObject cmObject = GameObject.Find("ComboManager");
+        comboManager = cmObject.GetComponent<ComboManager>();
     }
 
     void Update()
@@ -39,6 +45,7 @@ public class NoteManager3 : MonoBehaviour
         {
             theTimingManager.boxNoteList.Remove(collision.gameObject);
             Destroy(collision.gameObject);
+            comboManager.ComboMiss();
             Debug.Log("Miss");
 
         }

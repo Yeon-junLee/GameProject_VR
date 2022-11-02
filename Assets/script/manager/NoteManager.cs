@@ -13,9 +13,14 @@ public class NoteManager : MonoBehaviour
 
     TimingManager theTimingManager;
 
+    private ComboManager comboManager = null;
+
     void Start()
     {
         theTimingManager = GetComponent<TimingManager>();
+
+        GameObject cmObject = GameObject.Find("ComboManager");
+        comboManager = cmObject.GetComponent<ComboManager>();
     }
 
     void Update()
@@ -44,6 +49,7 @@ public class NoteManager : MonoBehaviour
         {
             theTimingManager.boxNoteList.Remove(collision.gameObject);
             Destroy(collision.gameObject);
+            comboManager.ComboMiss();
             Debug.Log("Miss");
         }
     }

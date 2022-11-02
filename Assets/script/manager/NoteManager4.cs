@@ -11,9 +11,15 @@ public class NoteManager4 : MonoBehaviour
     [SerializeField] GameObject goNote = null;
 
     TimingManager4 theTimingManager;
+
+    private ComboManager comboManager = null;
+
     void Start()
     {
         theTimingManager = GetComponent<TimingManager4>();
+
+        GameObject cmObject = GameObject.Find("ComboManager");
+        comboManager = cmObject.GetComponent<ComboManager>();
     }
     // Update is called once per frame
     void Update()
@@ -38,6 +44,7 @@ public class NoteManager4 : MonoBehaviour
         {
             theTimingManager.boxNoteList.Remove(collision.gameObject);
             Destroy(collision.gameObject);
+            comboManager.ComboMiss();
             Debug.Log("Miss");
         }
     }
