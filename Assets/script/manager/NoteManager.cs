@@ -17,7 +17,7 @@ public class NoteManager : MonoBehaviour
     {
         theTimingManager = GetComponent<TimingManager>();
     }
-    // Update is called once per frame
+
     void Update()
     {
         currentTime += Time.deltaTime;

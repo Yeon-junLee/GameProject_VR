@@ -18,7 +18,7 @@ public class TimingManager : MonoBehaviour
         for(int i=0; i < timingRect.Length; i++)
         {
             timingBoxes[i].Set(Center.localPosition.y - timingRect[i].rect.height / 2,
-                               Center.localPosition.y - timingRect[i].rect.height / 2);
+                               Center.localPosition.y + timingRect[i].rect.height / 2);
         }
     }
 
@@ -27,10 +27,10 @@ public class TimingManager : MonoBehaviour
     {
         for(int i=0; i< boxNoteList.Count; i++)
         {
-            float t_notePosY = boxNoteList[i].transform.localPosition.y;
+            float t_notePosY = boxNoteList[i].transform.localPosition.y;    // 각 노트의 y값을 받아서 판정범위 안에 있는지 확인
             for(int x=0; x< timingBoxes.Length; x++)
             {
-                if (timingBoxes[x].y <= t_notePosY && t_notePosY <= timingBoxes[x].y)
+                if (timingBoxes[x].x <= t_notePosY && t_notePosY <= timingBoxes[x].y)
                 {
                     boxNoteList[i].GetComponent<Note>().HideNote();
                     boxNoteList.RemoveAt(i);
