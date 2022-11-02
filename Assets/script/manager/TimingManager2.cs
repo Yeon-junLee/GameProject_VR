@@ -17,8 +17,8 @@ public class TimingManager2 : MonoBehaviour
         timingBoxes = new Vector2[timingRect.Length];
         for (int i = 0; i < timingRect.Length; i++)
         {
-            timingBoxes[i].Set(Center.localPosition.y - timingRect[i].rect.height / 2,
-                               Center.localPosition.y + timingRect[i].rect.height / 2);
+            timingBoxes[i].Set(Center.position.y - timingRect[i].rect.height / 2,
+                               Center.position.y + timingRect[i].rect.height / 2);
         }
     }
 
