@@ -39,6 +39,7 @@ public class NoteManager3 : MonoBehaviour
         {
             theTimingManager.boxNoteList.Remove(collision.gameObject);
             Destroy(collision.gameObject);
+            Debug.Log("Miss");
 
         }
     }

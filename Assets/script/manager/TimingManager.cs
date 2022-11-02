@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimingManager : MonoBehaviour
 {
-
+    
     public List<GameObject> boxNoteList = new List<GameObject>();
 
     [SerializeField] Transform Center = null;

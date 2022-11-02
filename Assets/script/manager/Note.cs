@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-    public double blockdestroytime = 0d;
+    // private double blockdestroytime = 0d;
     public float noteSpeed = 800;
 
     UnityEngine.UI.Image noteImage;
@@ -19,12 +19,9 @@ public class Note : MonoBehaviour
     void Update()
     {
         transform.localPosition += Vector3.down * noteSpeed * Time.deltaTime;
-        blockdestroytime += Time.deltaTime;
-        if(blockdestroytime > 10d)
-        {
-            Destroy(this.gameObject);
-            Debug.Log("Miss");
-        }
+        // blockdestroytime += Time.deltaTime;
+
+        
     }
 
     public void HideNote()

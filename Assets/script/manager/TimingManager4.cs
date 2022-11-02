@@ -5,6 +5,7 @@ using UnityEngine;
 public class TimingManager4 : MonoBehaviour
 {
 
+   
     public List<GameObject> boxNoteList = new List<GameObject>();
 
     [SerializeField] Transform Center = null;
@@ -21,6 +22,8 @@ public class TimingManager4 : MonoBehaviour
                                Center.localPosition.y + timingRect[i].rect.height / 2);
         }
     }
+
+    
 
     // Update is called once per frame
     public void CheckTiming()
