@@ -21,7 +21,7 @@ public class ScoreManager : MonoBehaviour
         textScore.text = "Score: " + score.ToString();
     }
 
-    public void GoodHit()
+    public void CoolHit()
     {
         score += 500;
         textScore.text = "Score: " + score.ToString();
