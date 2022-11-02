@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AccuracyManager : MonoBehaviour
 {
-    public static int accuracy = 0;
-    public static int notenum = 0;
+    private int accuracy = 0;
+    private int notenum = 0;
 
     public void NotePlus()
     {

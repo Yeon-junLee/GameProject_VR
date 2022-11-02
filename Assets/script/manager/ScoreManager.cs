@@ -6,7 +6,7 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
 
-    public static int score = 0;
+    private int score = 0;
     public TextMeshProUGUI textScore = null;
 
     public void PerfectHit()
