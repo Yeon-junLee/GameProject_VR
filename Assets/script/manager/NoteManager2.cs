@@ -12,9 +12,14 @@ public class NoteManager2 : MonoBehaviour
 
     TimingManager2 theTimingManager;
 
+    private ComboManager comboManager = null;
+
     void Start()
     {
         theTimingManager = GetComponent<TimingManager2>();
+
+        GameObject cmObject = GameObject.Find("ComboManager");
+        comboManager = cmObject.GetComponent<ComboManager>();
     }
 
     void Update()
@@ -41,6 +46,7 @@ public class NoteManager2 : MonoBehaviour
         {
             theTimingManager.boxNoteList.Remove(collision.gameObject);
             Destroy(collision.gameObject);
+            comboManager.ComboMiss();
             Debug.Log("Miss");
 
         }
