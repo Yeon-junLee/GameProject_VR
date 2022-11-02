@@ -23,6 +23,7 @@ public class Note : MonoBehaviour
         if(blockdestroytime > 10d)
         {
             Destroy(this.gameObject);
+            Debug.Log("Miss");
         }
     }
 
