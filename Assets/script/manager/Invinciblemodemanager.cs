@@ -4,18 +4,8 @@ using UnityEngine;
 
 public class Invinciblemodemanager : MonoBehaviour
 {
-    public void ToggleClick(bool isOn)
-    {
-        if(isOn)
-        {
-            // invincible mode on 시키는 코드
-        }
-
-        else
-        {
-            // 일반 모드
-        }
-    }
+    public GameObject CheckInvincible;
+    public bool Invincible;
 
     void Start()
     {
@@ -25,6 +15,9 @@ public class Invinciblemodemanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (CheckInvincible.activeSelf == true)
+            Invincible = true;
+        else
+            Invincible = false;
     }
 }

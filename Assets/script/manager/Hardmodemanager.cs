@@ -4,18 +4,8 @@ using UnityEngine;
 
 public class Hardmodemanager : MonoBehaviour
 {
-    public void ToggleClick(bool isOn)
-    {
-        if (isOn)
-        {
-            // invincible mode on 시키는 코드
-        }
-
-        else
-        {
-            // 일반 모드
-        }
-    }
+    public GameObject CheckHard;
+    public bool Hard;
 
     void Start()
     {
@@ -25,6 +15,9 @@ public class Hardmodemanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (CheckHard.activeSelf == true)
+            Hard = true;
+        else
+            Hard = false;
     }
 }

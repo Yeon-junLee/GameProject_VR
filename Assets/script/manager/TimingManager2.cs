@@ -16,7 +16,7 @@ public class TimingManager2 : MonoBehaviour
     private AccuracyManager accuracyManager = null;
 
     EffectManager2 Effect;
-
+    private bool Hide = true;
     void Start()
     {
         timingBoxes = new Vector2[timingRect.Length];
@@ -48,33 +48,45 @@ public class TimingManager2 : MonoBehaviour
             {
                 if (timingBoxes[x].x <= t_notePosY && t_notePosY <= timingBoxes[x].y)
                 {
-                    boxNoteList[i].GetComponent<Note>().HideNote();
+                    if (Hide)
+                    {
+                        boxNoteList[i].GetComponent<Note>().HideNote();
+                        Hide = false;
+                    }
+                    else
+                    {
+                        Destroy(boxNoteList[i]);
+                    }
                     if (x < timingBoxes.Length - 1)
                     {
                         Effect.NoteDestroyEffect();
                     }
                     boxNoteList.RemoveAt(i);
                     Debug.Log("Hit" + x);
-
+                    Effect.JudgementEffect(x);
                     if (x == 0)
                     {
                         scoreManager.PerfectHit();
                         comboManager.ComboPlus();
+                        accuracyManager.PerfectAccuracy();
                     }
                     else if (x == 1)
                     {
                         scoreManager.GreatHit();
                         comboManager.ComboPlus();
+                        accuracyManager.GreatAccuracy();
                     }
                     else if (x == 2)
                     {
                         scoreManager.CoolHit();
                         comboManager.ComboPlus();
+                        accuracyManager.CoolAccuracy();
                     }
                     else if (x == 3)
                     {
                         scoreManager.BadHit();
                         comboManager.ComboPlus();
+                        accuracyManager.BadAccuracy();
                     }
 
                     return;

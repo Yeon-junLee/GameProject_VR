@@ -5,8 +5,8 @@ using TMPro;
 
 public class AccuracyManager : MonoBehaviour
 {
-    private int accuracy = 0;
-    private int notenum = 0;
+    public float accuracy = 0;
+    public int notenum = 0;
     public TextMeshProUGUI textAccuracy = null;
 
     public void NotePlus()
@@ -17,30 +17,30 @@ public class AccuracyManager : MonoBehaviour
     public void PerfectAccuracy()
     {
         accuracy += 100;
-        textAccuracy.text = "Accuracy: " + (accuracy/notenum).ToString() +"%";
+        textAccuracy.text = "Accuracy: " + (accuracy/(float)notenum).ToString() +"%";
     }
 
     public void GreatAccuracy()
     {
         accuracy += 75;
-        textAccuracy.text = "Accuracy: " + (accuracy / notenum).ToString() + "%";
+        textAccuracy.text = "Accuracy: " + (accuracy / (float)notenum).ToString() + "%";
     }
 
     public void CoolAccuracy()
     {
         accuracy += 50;
-        textAccuracy.text = "Accuracy: " + (accuracy / notenum).ToString() + "%";
+        textAccuracy.text = "Accuracy: " + (accuracy / (float)notenum).ToString() + "%";
     }
 
     public void BadAccuracy()
     {
         accuracy += 25;
-        textAccuracy.text = "Accuracy: " + (accuracy / notenum).ToString() + "%";
+        textAccuracy.text = "Accuracy: " + (accuracy / (float)notenum).ToString() + "%";
     }
 
     public void MissAccuracy()
     {
-        textAccuracy.text = "Accuracy: " + (accuracy / notenum).ToString() + "%";
+        textAccuracy.text = "Accuracy: " + (accuracy / (float)notenum).ToString() + "%";
     }
 
     void Start()

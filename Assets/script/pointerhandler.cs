@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.Extras;
 using UnityEngine.SceneManagement;
+using System;
+using Valve.VR;
+
 public class pointerhandler : MonoBehaviour
 {
     public SteamVR_LaserPointer laserPointer;
@@ -11,12 +14,20 @@ public class pointerhandler : MonoBehaviour
     public GameObject ExitMenu;
     public GameObject MainMenu;
 
+    public GameObject HardmodeManager;
+    public GameObject InvincibleManager;
+
+    //public GameObject HardToggle;
+    //public GameObject InvincibleToggle;
+
+
     // Start is called before the first frame update
     void Start()
     {
         laserPointer.PointerIn += PointerInside;
         laserPointer.PointerOut += PointerOutside;
         laserPointer.PointerClick += PointerClick;
+
     }
 
     public void PointerInside(object sender, PointerEventArgs eventArgs)
@@ -71,11 +82,18 @@ public class pointerhandler : MonoBehaviour
         {
             Debug.Log("Start Clicked");
             SceneManager.LoadScene("basic scene");
+            //DontDestroyOnLoad(HardmodeManager);
+            //DontDestroyOnLoad(InvincibleManager);
         }
 
         if (eventArgs.target.CompareTag("RESULT_BACK"))
         {
             SceneManager.LoadScene("UI scene");
+        }
+
+        if (eventArgs.target.CompareTag("REALEXIT"))
+        {
+            Application.Quit();
         }
     }
 

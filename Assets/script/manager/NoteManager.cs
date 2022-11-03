@@ -12,8 +12,9 @@ public class NoteManager : MonoBehaviour
 
 
     TimingManager theTimingManager;
-
+    EffectManager Effect;
     private ComboManager comboManager = null;
+    private AccuracyManager accuracyManager = null;
 
     void Start()
     {
@@ -21,6 +22,10 @@ public class NoteManager : MonoBehaviour
 
         GameObject cmObject = GameObject.Find("ComboManager");
         comboManager = cmObject.GetComponent<ComboManager>();
+
+        GameObject amObject = GameObject.Find("AccuracyManager");
+        accuracyManager = amObject.GetComponent<AccuracyManager>();
+        Effect = FindObjectOfType<EffectManager>();
     }
 
     void Update()
@@ -31,10 +36,13 @@ public class NoteManager : MonoBehaviour
         if (currentTime >= 240d / bpm)
         {
             GameObject t_Note = Instantiate(goNote, tfNoteAppear.position, Quaternion.identity);
+            
             t_Note.transform.SetParent(this.transform);
-
+            
             theTimingManager.boxNoteList.Add(t_Note);
             currentTime -= 240d / bpm;
+
+            accuracyManager.NotePlus();
         }
         
 
@@ -50,6 +58,8 @@ public class NoteManager : MonoBehaviour
             theTimingManager.boxNoteList.Remove(collision.gameObject);
             Destroy(collision.gameObject);
             comboManager.ComboMiss();
+            accuracyManager.MissAccuracy();
+            Effect.JudgementEffect(4);
             Debug.Log("Miss");
         }
     }

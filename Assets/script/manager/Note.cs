@@ -4,14 +4,26 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
+    bool Hard, Invincible;
+    GameObject HMM, IMM;
+
     // private double blockdestroytime = 0d;
-    public float noteSpeed = 800;
+    private float noteSpeed = 100;
 
     UnityEngine.UI.Image noteImage;
 
     void Start()
     {
         noteImage = GetComponent<UnityEngine.UI.Image>();
+
+        //HMM = GameObject.Find("HardmodeManager");
+        //IMM = GameObject.Find("InvincibleManager");
+
+        //Hard = HMM.GetComponent<Hardmodemanager>().Hard;
+        //Invincible = IMM.GetComponent<Invinciblemodemanager>().Invincible;
+
+        //if (Hard)
+        //    noteSpeed = 250;
     }
 
    
