@@ -15,7 +15,7 @@ public class TimingManager3 : MonoBehaviour
     private ComboManager comboManager = null;
     private AccuracyManager accuracyManager = null;
 
-    EffectManager Effect;
+    EffectManager3 Effect;
 
     void Start()
     {
@@ -35,7 +35,7 @@ public class TimingManager3 : MonoBehaviour
         GameObject amObject = GameObject.Find("AccuracyManager");
         accuracyManager = amObject.GetComponent<AccuracyManager>();
 
-        Effect = FindObjectOfType<EffectManager>();
+        Effect = FindObjectOfType<EffectManager3>();
     }
 
     // Update is called once per frame

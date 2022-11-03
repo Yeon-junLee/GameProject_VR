@@ -16,7 +16,7 @@ public class TimingManager4 : MonoBehaviour
     private ComboManager comboManager = null;
     private AccuracyManager accuracyManager = null;
 
-    EffectManager Effect;
+    EffectManager4 Effect;
 
     void Start()
     {
@@ -36,7 +36,7 @@ public class TimingManager4 : MonoBehaviour
         GameObject amObject = GameObject.Find("AccuracyManager");
         accuracyManager = amObject.GetComponent<AccuracyManager>();
 
-        Effect = FindObjectOfType<EffectManager>();
+        Effect = FindObjectOfType<EffectManager4>();
     }
 
     
